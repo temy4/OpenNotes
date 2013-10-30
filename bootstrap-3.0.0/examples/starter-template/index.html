@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../../dist/css/font-awesome.css" rel="stylesheet">
+    <link href="../../dist/css/bootstrap-tagsinput.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">OpenNote</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="To the index page">Home</a></li>
+            <li class="active"><a href="#" data-toggle="tooltip" data-placement="bottom" title="All your notes">My Notes</a></li>
+            <li><a href="#about" data-toggle="tooltip" data-placement="bottom" title="Add flash note without specifying title, tags or notepad">Quick Note</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Notepads
+                  <a href="#" class="pull-right" data-toggle="tooltip" data-placement="right" title="Add Notepad"><span class="glyphicon glyphicon-plus"></span></a>
+                </h3>
+              </div>
+              <div class="list-group">
+                  <span class="list-group-item list-heading">
+                    Personal
+                    <a href="#" class="pull-right" data-toggle="tooltip" data-placement="right" title="Add Note"><span class="glyphicon glyphicon-plus"></span></a>
+                  </span>
+                  <a href="#" class="list-group-item"><span class="badge pull-right">10</span>My Notes</a>
+              </div>
+              <div class="list-group">
+                  <span class="list-group-item list-heading">
+                    Work
+                    <a href="#" class="pull-right" data-toggle="tooltip" data-placement="right" title="Add Note"><span class="glyphicon glyphicon-plus"></span></a>
+                  </span>
+                  <a href="#" class="list-group-item active"><span class="badge pull-right">3</span>New</a>
+                  <a href="#" class="list-group-item" class="list-group-item"><span class="badge pull-right">2</span>Current</a>
+                  <a href="#" class="list-group-item"><span class="badge pull-right">5</span>Completed</a>
+              </div>
+              <div class="list-group">
+                  <span class="list-group-item list-heading">
+                    <span class="glyphicon glyphicon-trash"></span> Trash
+                  </span>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Tags</h3>
+              </div>
+              <div class="panel-body">
+                <span class="label label-info">tag1</span> <span class="label label-info">tag2</span> <span class="label label-info">42</span> <span class="label label-info">some tag</span>
+                <span class="label label-info">tag1</span> <span class="label label-info">tag2</span> <span class="label label-info">42</span> <span class="label label-info">some tag</span>
+                <span class="label label-info">tag1</span> <span class="label label-info">tag2</span> <span class="label label-info">42</span> <span class="label label-info">some tag</span>
+                <span class="label label-info">tag1</span> <span class="label label-info">tag2</span> <span class="label label-info">42</span> <span class="label label-info">some tag</span>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-bookmark"></span>&nbsp;&nbsp;Shortcuts</h3>
+              </div>
+              <div class="panel-body">
+                Panel content
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search..." x-webkit-speech="" speech="">
+                  <span class="input-group-btn">
+                    <a href="#" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Clear field" type="button"><span class="glyphicon glyphicon-remove"></span></a><br />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="list-group">
+              <a href="#" class="list-group-item active">
+                <h4 class="list-group-item-heading">List group item heading 1<span class="label label-warning pull-right">&nbsp;&nbsp;</span></h4>
+                <p class="list-group-item-text">
+                  <span class="badge">01.02.2013</span>
+                  Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                  <span class="pull-right">
+                    <span class="label label-info">tag1</span> <span class="label label-info">tag2</span> <span class="label label-info">42</span>
+                  </span>
+                </p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">List group item heading 2<span class="label label-warning pull-right">&nbsp;&nbsp;</span></h4>
+                <p class="list-group-item-text">
+                  <span class="badge">Yesterday</span>
+                  Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                </p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">List group item heading 3<span class="label label-danger pull-right">&nbsp;&nbsp;</span></h4>
+                <p class="list-group-item-text">
+                  <span class="badge">Today</span>
+                  Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                  <span class="pull-right">
+                    <span class="label label-info">42</span> <span class="label label-info">some tag</span>
+                  </span>
+                </p>
+              </a>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Title" value="List group item heading 1" x-webkit-speech="" speech="">
+                  <span class="input-group-btn">
+                    <a href="#" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Save title" type="button"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                  </span>
+                </div>
+
+                <!-- Editor -->
+                <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+                  <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                      </ul>
+                    </div>
+                  <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                      <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+                      <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+                      <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+                      </ul>
+                  </div>
+                  <div class="btn-group">
+                    <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+                    <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+                    <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="icon-strikethrough"></i></a>
+                    <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+                  </div>
+                  <div class="btn-group">
+                    <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="icon-list-ul"></i></a>
+                    <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="icon-list-ol"></i></a>
+                    <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+                    <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+                  </div>
+                  <div class="btn-group">
+                    <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+                    <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+                    <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+                    <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+                  </div>
+                  <div class="btn-group">
+                  <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="icon-link"></i></a>
+                    <div class="dropdown-menu input-append">
+                      <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+                      <button class="btn" type="button">Add</button>
+                    </div>
+                    <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+                  </div>
+                  
+                  <div class="btn-group">
+                    <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>
+                    <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+                  </div>
+                  <div class="btn-group">
+                    <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+                    <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+                  </div>
+                  <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+                </div>
+
+                <div id="editor">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</div>
+                <!-- / Editor -->
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-default">
+                    <input type="radio" name="options" id="option1"> No Category
+                  </label>
+                  <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option2"> Blue
+                  </label>
+                  <label class="btn btn-success">
+                    <input type="radio" name="options" id="option3"> Green
+                  </label>
+                  <label class="btn btn-warning active">
+                    <input type="radio" name="options" id="option2" checked> Orange
+                  </label>
+                  <label class="btn btn-danger">
+                    <input type="radio" name="options" id="option3"> Red
+                  </label>
+                </div>
+              </div>
+            </div>
+            <input type="text" value="tag1,tag2,42" data-role="tagsinput" style="width:100%" />
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../dist/js/jquery.hotkeys.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/bootstrap-wysiwyg.js"></script>
+    <script src="../../dist/js/bootstrap-tagsinput.min.js"></script>
+    <script>
+      $(function(){
+        function initToolbarBootstrapBindings() {
+          var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier', 
+                'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+                'Times New Roman', 'Verdana'],
+                fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+          $.each(fonts, function (idx, fontName) {
+              fontTarget.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'+fontName + '</a></li>'));
+          });
+          $('a[title]').tooltip({container:'body'});
+          $('.dropdown-menu input').click(function() {return false;})
+            .change(function () {$(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');})
+            .keydown('esc', function () {this.value='';$(this).change();});
+
+          $('[data-role=magic-overlay]').each(function () { 
+            var overlay = $(this), target = $(overlay.data('target')); 
+            overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+          });
+          if ("onwebkitspeechchange"  in document.createElement("input")) {
+            var editorOffset = $('#editor').offset();
+            $('#voiceBtn').css('position','absolute').offset({top: editorOffset.top, left: editorOffset.left+$('#editor').innerWidth()-35});
+          } else {
+            $('#voiceBtn').hide();
+          }
+      };
+      function showErrorAlert (reason, detail) {
+        var msg='';
+        if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+        else {
+          console.log("error uploading file", reason, detail);
+        }
+        $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+ 
+         '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+      };
+        initToolbarBootstrapBindings();  
+      $('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
+        window.prettyPrint && prettyPrint();
+      });
+    </script>
+    
+  </body>
+</html>

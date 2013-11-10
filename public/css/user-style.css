@@ -62,3 +62,13 @@ div[data-role="editor-toolbar"] {
 .dropdown-menu a {
   cursor: pointer;
 }
+
+/* Small hack for bootstrap to remove rounded corners from sections :-) */
+.list-group-item.np-section:last-child{
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.list-group-item.np-section:first-child{
+	margin-top: 1px;
+}

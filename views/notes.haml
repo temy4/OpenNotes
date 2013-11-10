@@ -1,7 +1,7 @@
 .container
   .starter-template
     .row
-      .col-md-2
+      .col-md-3
         .panel.panel-default
           .panel-heading
             %h3.panel-title
@@ -17,11 +17,12 @@
                   %span.pull-right
                     %a.pull-right{"data-placement" => "right", href: "#", title: "Add Section", href: "#addSection", "class" => "addSectionLink", "data-notepad-id" => "#{n.id}", "data-target" => "#addSection", "data-toggle" => "modal"}<
                       %span.glyphicon.glyphicon-plus><
-                - Notepad.where(:parent => n.id).order(:order).each do |s|
-                  %a.list-group-item{"data-placement" => "right", "data-toggle" => "tooltip"}
-                    %span.badge.pull-right>
-                      = s.notes.count()
-                    = s.name
+                %span.sections{:id => "sections-#{n.id}", "data-notepad-id" => n.id}
+                  - Notepad.where(:parent => n.id).order(:order).each do |s|
+                    %a.list-group-item.np-section{"href" => "#", "data-notepad-id" => "#{s.id}", "id" => "section-#{s.id}", "data-placement" => "right", "data-toggle" => "tooltip"}
+                      %span.badge.pull-right>
+                        = s.notes.count()
+                      = s.name
           - else
             .list-group{:id => 'notepads'}
               %span.list-group-item.list-heading.notepad-not-found
@@ -81,7 +82,7 @@
               \  Shortcuts
           .panel-body
             Panel content
-      .col-md-10
+      .col-md-9.hidden{"id" => "editor-main"}
         .panel.panel-default
           .panel-body
             .input-group
@@ -90,7 +91,7 @@
                 %a.btn.btn-default{"data-placement" => "left", "data-toggle" => "tooltip", href: "#", title: "Clear field", type: "button"}
                   %span.glyphicon.glyphicon-remove
                 %br/
-        / .list-group
+        .list-group{:id => "notes-list"}
         /   %a.list-group-item.active{href: "#"}
         /     %h4.list-group-item-heading
         /       List group item heading 1
@@ -122,7 +123,7 @@
         .panel.panel-default
           .panel-body
             .input-group
-              %input.form-control{placeholder: "Title", speech: "", type: "text", value: "List group item heading 1", "x-webkit-speech" => ""}/
+              %input.form-control{placeholder: "Title", id: "note-title", speech: "", type: "text", value: "", "x-webkit-speech" => ""}/
               %span.input-group-btn
                 %a.btn.btn-default{"data-placement" => "left", "data-toggle" => "tooltip", href: "#", title: "Save title", type: "button"}
                   %span.glyphicon.glyphicon-floppy-disk
@@ -193,51 +194,40 @@
                 %a.btn{"data-edit" => "redo", title: "Redo (Ctrl/Cmd+Y)"}
                   %i.icon-repeat
               %input#voiceBtn{"data-edit" => "inserttext", type: "text", "x-webkit-speech" => ""}/
-            #editor Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+            #editor
             / / Editor
-        .panel.panel-default
-          .panel-body
-            .btn-group{"data-toggle" => "buttons"}
-              %label.btn.btn-default
-                %input#option1{name: "options", type: "radio"}/
-                No Category
-              %label.btn.btn-primary
-                %input#option2{name: "options", type: "radio"}/
-                Blue
-              %label.btn.btn-success
-                %input#option3{name: "options", type: "radio"}/
-                Green
-              %label.btn.btn-warning.active
-                %input#option2{checked: "checked", name: "options", type: "radio"}/
-                Orange
-              %label.btn.btn-danger
-                %input#option3{name: "options", type: "radio"}/
-                Red
-        %input{"data-role" => "tagsinput", style: "width:100%", type: "text", value: "tag1,tag2,42"}/
-        #addNotepad.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "addNotepadLabel", role: "dialog", tabindex: "-1"}
-          .modal-dialog
-            .modal-content
-              .modal-header
-                %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-                %h3.modal-title New Notepad
-              .modal-body
-                %input.form-control{placeholder: "Name of new notepad", id: "notepad-name", style: "width: 100%"}
-              .modal-footer
-                %button.btn.btn-default{"data-dismiss" => "modal", type: "button", id: "newnotepadclose"} Cancel
-                %button.btn.btn-primary{ "data-dismiss" => "modal", type: "button", id: "createnotepad"} Save
-        #addSection.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "addSectionLabel", role: "dialog", tabindex: "-1"}
-          .modal-dialog
-            .modal-content
-              .modal-header
-                %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-                %h3.modal-title New Section
-                %h5#np-name.modal-title
-              .modal-body
-                %input.form-control{placeholder: "Name of new section", id: "section-name", style: "width: 100%"}
-                %input.form-control{id: "notepad-id", type: "hidden"}
-              .modal-footer
-                %button.btn.btn-default{"data-dismiss" => "modal", type: "button", id: "newsectionclose"} Cancel
-                %button.btn.btn-primary{ "data-dismiss" => "modal", type: "button", id: "createsection"} Save
+        / .panel.panel-default
+        /   .panel-body
+        /     .btn-group{"data-toggle" => "buttons"}
+        /       - @categories.each do |c|
+        /         %label.btn{:class => "btn #{c.html_class}"}
+        /           %input{id: "category_#{c.name}", name: "category", value: "#{c.id}", type: "radio"}/
+        /           = c.name
+        %input{"id" => "tags", "data-role" => "tagsinput", style: "width:100%", type: "text"}/
+      #addNotepad.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "addNotepadLabel", role: "dialog", tabindex: "-1"}
+        .modal-dialog
+          .modal-content
+            .modal-header
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+              %h3.modal-title New Notepad
+            .modal-body
+              %input.form-control{placeholder: "Name of new notepad", id: "notepad-name", style: "width: 100%"}
+            .modal-footer
+              %button.btn.btn-default{"data-dismiss" => "modal", type: "button", id: "newnotepadclose"} Cancel
+              %button.btn.btn-primary{ "data-dismiss" => "modal", type: "button", id: "createnotepad"} Save
+      #addSection.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "addSectionLabel", role: "dialog", tabindex: "-1"}
+        .modal-dialog
+          .modal-content
+            .modal-header
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+              %h3.modal-title New Section
+              %h5#np-name.modal-title
+            .modal-body
+              %input.form-control{placeholder: "Name of new section", id: "section-name", style: "width: 100%"}
+              %input.form-control{id: "notepad-id", type: "hidden"}
+            .modal-footer
+              %button.btn.btn-default{"data-dismiss" => "modal", type: "button", id: "newsectionclose"} Cancel
+              %button.btn.btn-primary{ "data-dismiss" => "modal", type: "button", id: "createsection"} Save
             / /.modal-content
           / /.modal-dialog
         / /.modal

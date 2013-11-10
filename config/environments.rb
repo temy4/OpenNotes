@@ -1,6 +1,3 @@
-# coding: utf-8
-#The environment variable DATABASE_URL should be in the following format:
-# => postgres://{user}:{password}@{host}:{port}/path
 configure :development do
   db = URI.parse(ENV['DATABASE_URL'] || 'mysql2://10.233.106.247/opennote')
  

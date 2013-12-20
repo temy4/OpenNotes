@@ -1,9 +1,9 @@
 development:
   adapter: mysql2
-  database: opennote
+  database: opennotes
   username: root
-  password: toor
-  host: 10.233.106.247
+  password: hello_-s
+  host: 192.168.1.93
 production:
   adapter: postgresql
   database: d22s6r0mv2ui8d

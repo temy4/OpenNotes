@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20130923114132) do
   create_table "notepads", force: true do |t|
     t.string   "name"
     t.integer  "typeofnp"
-    t.integer  "parent_id"      default: 0
+    t.integer  "parent_id",  default: 0
     t.integer  "order",      default: 100
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false

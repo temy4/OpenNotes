@@ -39,8 +39,6 @@ GEM
       mini_portile (~> 0.5.0)
     nokogiri (1.6.0-x86-mingw32)
       mini_portile (~> 0.5.0)
-    pg (0.14.1)
-    pg (0.14.1-x86-mingw32)
     rack (1.5.2)
     rack-flash (0.1.2)
       rack
@@ -81,7 +79,6 @@ DEPENDENCIES
   haml
   mysql2
   nokogiri
-  pg
   sinatra
   sinatra-activerecord
   sinatra-authentication

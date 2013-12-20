@@ -1,11 +1,11 @@
 configure :development do
-  db = URI.parse(ENV['DATABASE_URL'] || 'mysql2://10.233.106.247/opennote')
+  db = URI.parse(ENV['DATABASE_URL'] || 'mysql2://192.168.1.93/opennotes')
  
   ActiveRecord::Base.establish_connection(
       :adapter => db.scheme == 'mysql' ? 'mysql2' : db.scheme,
       :host     => db.host,
       :username => db.user,
-      :password => 'toor',
+      :password => 'hello_-s',
       :database => db.path[1..-1],
       :encoding => 'utf8'
   )

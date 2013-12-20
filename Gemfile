@@ -8,9 +8,9 @@ gem "haml"
 gem 'sinatra-authentication'
 gem 'nokogiri'
 
-group :production do
-  gem 'pg'
-end
+#group :production do
+#  gem 'pg'
+#end
 
 group :development do
 	gem 'mysql2'

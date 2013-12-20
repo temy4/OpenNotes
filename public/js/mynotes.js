@@ -191,36 +191,8 @@ var a = 0;
 			}
 		})
 	}
-	function humanize_date(date_string){
-		var today = new Date();
-		var o_date = new Date(date_string);
-		if ( today.getMonth() == o_date.getMonth() && today.getYear() == o_date.getYear() ){
-			if (today.getDay() == o_date.getDay()){
-				return 'Today at ' + o_date.toLocaleTimeString()
-			}
-			else if (today.getDay() == o_date.getDay() + 1){
-				return 'Yesterday';
-			}
-			else{
-				return o_date.toLocaleTimeString();
-			}
-		}
-		else{
-			return o_date.toLocaleTimeString();
-		}
-	}
+
 	function reload_notes(notepad_id){
-        // /   %a.list-group-item.active{href: "#"}
-        // /     %h4.list-group-item-heading
-        // /       List group item heading 1
-        // /       %span.label.label-warning.pull-right   
-        // /     %p.list-group-item-text
-        // /       %span.badge 01.02.2013
-        // /       Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-        // /       %span.pull-right
-        // /         %span.label.label-info tag1
-        // /         %span.label.label-info tag2
-        // /         %span.label.label-info 42
         CURRENT_NP = notepad_id;
 		$.ajax({
 			type: "GET",
@@ -235,11 +207,11 @@ var a = 0;
 					$('#notes-list').append(
 						'<a href="#" id="note-' + v.id + '" class="list-group-item">' + 
 						'<h4 class="list-group-item-heading">' +
-						v.title +
+						helpers.cutString(v.title, 80) +
 						'<span class="label label-warning pull-right">&nbsp;&nbsp;</span></h4>' +
 						'<p class="list-group-item-text">' +
-						'<span class="badge">' + humanize_date(v.created_at) + '</span>&nbsp;' +
-						v.note_text +
+						'<span class="badge">' + helpers.humanizeDate(v.created_at) + '</span>&nbsp;' +
+						helpers.cutString(v.note_text, 100) +
 						'</p>' +
 						'</a>'
 					)
@@ -250,6 +222,8 @@ var a = 0;
 			}
 		})
 	}
+
+
 
 	init();
 

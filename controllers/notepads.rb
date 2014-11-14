@@ -13,14 +13,14 @@ class App < Sinatra::Application
       notepad.parent = parent.first.id;
 	  	notepad.created_at = created;
 	  	notepad.updated_at = created;
-	  	if notepad.save
+	  	#if notepad.save
 	  		status 200
         children = Notepad.where(:parent => parent.first.id);
         children.to_json;
-	  	else
-	  		status 500;
-	  		"saving_error";
-	  	end
+	  	#else
+	  	#	status 500;
+	  	#	"saving_error";
+	  	#end
   	end
   end
 

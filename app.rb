@@ -2,7 +2,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'json'
-require 'nokogiri'
+# require 'nokogiri', '~> 1.5.6'
 # Models
 require './config/environments'
 require './models/notepad'

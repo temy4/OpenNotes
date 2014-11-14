@@ -53,19 +53,21 @@ var a = 0;
 						'<span class=" glyphicon glyphicon-plus"></span></a>' + 
 						'<span class="sections" data-notepad-id="' + v.id + '" "id" = "sections-' + v.id + '"'
 					)
+					console.log('Updating All');
+					reload_notes(v.id)
 				})
 				LOCK_QUERY = false;
 			},
 			error: function(response, status, error){
 				switch(response.responseText){
 					case 'notepad_exists':
-						alert('Notepad "' + name + '" already exists')
+						console.log('Notepad "' + name + '" already exists')
 					break
 					case 'saving_error':
-						alert('Saving error')
+						console.log('Saving error')
 					break
 					default:
-						alert('Unknown error')
+						console.log('Unknown error')
 				}
 				LOCK_QUERY = false;
 			}
@@ -107,13 +109,13 @@ var a = 0;
 				error: function(response, status, error){
 					switch(response.responseText){
 						case 'notepad_exists':
-							alert('Notepad "' + name + '" already exists')
+							console.log('Notepad "' + name + '" already exists')
 						break
 						case 'saving_error':
-							alert('Saving error')
+							console.log('Saving error')
 						break
 						default:
-							alert('Unknown error')
+							console.log('Unknown error')
 					}
 					$('#notepad-name').val('');
 					LOCK_QUERY = false;
@@ -163,7 +165,7 @@ var a = 0;
 				reload_notes(CURRENT_NP);
 			},
 			error: function(response, status, error){
-				alert('Unknown error');
+				console.log('Unknown error');
 				LOCK_QUERY = false;
 			}
 		})
@@ -186,7 +188,7 @@ var a = 0;
 				reload_notes(CURRENT_NP);
 			},
 			error: function(response, status, error){
-				alert('Unknown error');
+				console.log('Unknown error');
 				LOCK_QUERY = false;
 			}
 		})
@@ -194,6 +196,7 @@ var a = 0;
 
 	function reload_notes(notepad_id){
         CURRENT_NP = notepad_id;
+        console.log('Loading notes ' + CURRENT_NP);
 		$.ajax({
 			type: "GET",
 			dataType: 'json',
@@ -218,7 +221,7 @@ var a = 0;
 				})
 			},
 			error: function(response, status, error){
-				alert('Unknown error')
+				console.log('Unknown error')
 			}
 		})
 	}

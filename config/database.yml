@@ -3,7 +3,7 @@ development:
   database: opennotes
   username: root
   password: hello_-s
-  host: 192.168.1.93
+  host: localhost
 production:
   adapter: postgresql
   database: d22s6r0mv2ui8d

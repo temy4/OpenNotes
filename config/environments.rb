@@ -1,5 +1,5 @@
 configure :development do
-  db = URI.parse(ENV['DATABASE_URL'] || 'mysql2://192.168.1.93/opennotes')
+  db = URI.parse(ENV['DATABASE_URL'] || 'mysql2://localhost/opennotes')
  
   ActiveRecord::Base.establish_connection(
       :adapter => db.scheme == 'mysql' ? 'mysql2' : db.scheme,

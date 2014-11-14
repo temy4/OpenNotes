@@ -3,10 +3,9 @@ source "https://rubygems.org"
 gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
-gem "sinatra"
 gem "haml"
 gem 'sinatra-authentication'
-gem 'nokogiri'
+#gem 'nokogiri', '~> 1.5.6'
 
 #group :production do
 #  gem 'pg'
@@ -15,3 +14,5 @@ gem 'nokogiri'
 group :development do
 	gem 'mysql2'
 end
+
+gem 'tux' # Debug Only!
